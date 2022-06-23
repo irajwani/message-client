@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div>
+    <p>Access token</p>
+    <!--  After logging in, enter accessToken of user -->
+    <input
+        id="token"
+        value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImV2YW4iLCJzdWIiOiI2MmIwY2RiMmVhNTRmNjhhN2RhYzE4YjYiLCJpYXQiOjE2NTU4ODYzODYsImV4cCI6MTY1NjQ5MTE4Nn0.qnOv5tu1XgzoChzD2QJXddTZ7rruq6bDdL8Ew0KE6ZE"
+        type="text"
+    />
+</div>
+
+<div>
+    <p>Enter Room ID</p>
+    <!--  Enter ID of room you created  -->
+    <input
+        id="room"
+        value="62b200652362b0d8b5c13e2e"
+        type="text"
+    />
+</div>
+
+<div>
+    <p>Input Message</p>
+    <input id="message" type="text" />
+    <button onclick="handleSubmitNewMessage()">Submit</button>
+</div>
+
+<div>
+    <p>Messages</p>
+    <ul id="messages"></ul>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+<script src="./chat-socket.js"></script>
+</body>
+
+</html>
