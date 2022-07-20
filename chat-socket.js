@@ -1,9 +1,10 @@
 const token = document.getElementById("token");
 const user = document.getElementById("user");
+const SERVER = 'http://localhost:80';
 
 
 const socket = io(
-  `http://localhost:3000?token=${token.value}`,
+  `${SERVER}?token=${token.value}`,
   { transport: ["websocket"] }
 );
 
