@@ -1,8 +1,9 @@
 const token = document.getElementById("token");
-const room = document.getElementById("room");
+const user = document.getElementById("user");
+
 
 const socket = io(
-  `http://localhost:3000?token=${token.value}&room=${room.value}`,
+  `http://localhost:3000?token=${token.value}`,
   { transport: ["websocket"] }
 );
 
@@ -11,7 +12,7 @@ const message = document.getElementById("message");
 const messages = document.getElementById("messages");
 
 const handleSubmitNewMessage = () => {
-  socket.emit("message", { text: message.value, recipient: username.value });
+  socket.emit("message", { text: message.value, recipient: username.value, sender: user.value });
 };
 
 socket.on("message", (messages) => {
