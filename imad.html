@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div>
+    <p>Access token</p>
+    <!--  After logging in, enter accessToken of user -->
+    <input
+        id="token"
+        value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImltYWQiLCJzdWIiOiI4MDIzMDZhOS1hYmUzLTRhODEtYWNhZi1iYWI1YTUxYjEwM2QiLCJpYXQiOjE2NTg0MTAwNDEsImV4cCI6MTY1OTAxNDg0MX0.e22S7osejTcVoNEL-PcYYwZa0RdcOgRVB9Eiqt1Cfwc"
+        type="text"
+    />
+</div>
+
+<div>
+    <p>Input Message</p>
+    <input id="message" type="text" />
+    <button onclick="handleSubmitNewMessage()">Submit</button>
+</div>
+
+<div>
+    <p>Username to send it to</p>
+    <!--  Enter username of another user  -->
+    <input
+        id="username"
+        value="hajira"
+        type="text"
+    />
+</div>
+
+<div>
+    <p>Messages</p>
+    <ul id="messages"></ul>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+<script src="./chat-socket.js"></script>
+</body>
+
+</html>

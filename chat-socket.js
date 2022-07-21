@@ -1,19 +1,18 @@
 const token = document.getElementById("token");
-const user = document.getElementById("user");
-const SERVER = 'http://localhost:80';
-
+const SERVER = 'http://localhost:81';
 
 const socket = io(
   `${SERVER}?token=${token.value}`,
   { transport: ["websocket"] }
 );
 
+
 const username = document.getElementById("username");
 const message = document.getElementById("message");
 const messages = document.getElementById("messages");
 
 const handleSubmitNewMessage = () => {
-  socket.emit("message", { text: message.value, recipient: username.value, sender: user.value });
+  socket.emit("message", { text: message.value, recipient: username.value });
 };
 
 socket.on("message", (messages) => {
@@ -31,3 +30,4 @@ const buildNewMessage = (message) => {
   li.appendChild(document.createTextNode(message));
   return li;
 };
+
